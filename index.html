@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Tableau périodique interactif</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atomes et molécules</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tableau périodique interactif</h1>
-  <div id="tableau"></div>
-  <div id="details">Clique sur un élément pour voir ses informations.</div>
-  <script src="script.js"></script>
+<header>
+  <h1>Atomes et molécules</h1>
+  <p>Du numéro atomique à la géométrie : entrez un élément ou une formule.</p>
+</header>
+<main>
+  <div class="tabs">
+    <button id="tAtome" class="on">Atome / ion</button>
+    <button id="tMol">Molécule</button>
+  </div>
+
+  <section id="atome">
+    <div class="bar">
+      <input id="inAtome" placeholder="Symbole, nom ou numéro (Fe, Carbone, 17)" autocomplete="off">
+      <label>Charge <input id="inCharge" type="number" value="0" min="-3" max="7"></label>
+      <button id="goAtome">Analyser</button>
+    </div>
+    <div class="chips" id="chipsA"></div>
+    <dl id="outAtome"></dl>
+  </section>
+
+  <section id="molecule" hidden>
+    <div class="bar">
+      <input id="inMol" placeholder="Formule (H2O, CO2, SF6…)" autocomplete="off">
+      <button id="goMol">Analyser</button>
+    </div>
+    <div class="chips" id="chipsM"></div>
+    <dl id="outMol"></dl>
+  </section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
